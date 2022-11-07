@@ -6,7 +6,7 @@
 
 ## 使用教程
 
-- 修改main.py中的laravel_session
+- 修改main.py中的[laravel_session](https://yuzai.xyz/archives/c59a0c1a.html)
 
 ```python
 if __name__ == '__main__':
