@@ -8,7 +8,7 @@
 from Qndxx import Qndxx
 
 if __name__ == '__main__':
-    laravel_session = "qGX9yOVupa1OaTpiNmq1US6JgtYMZIvc9H2SzO0a"
+    laravel_session = os.environ["COOKIE1"]
     qndxx = Qndxx(laravel_session)
     qndxx.login()
     qndxx.confirm()
