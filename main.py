@@ -9,10 +9,7 @@ from Qndxx import Qndxx
 import argparse
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--aa', type=str, default = None)
-    args = parser.parse_args()
-    laravel_session = args.aa
+    laravel_session = os.environ["COOKIE1"]
     qndxx = Qndxx(laravel_session)
     qndxx.login()
     qndxx.confirm()
