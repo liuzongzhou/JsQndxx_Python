@@ -6,7 +6,7 @@
 @time:2022/09/17
 """
 from Qndxx import Qndxx
-import argparse
+import os
 
 if __name__ == '__main__':
     laravel_session = os.environ["COOKIE1"]
