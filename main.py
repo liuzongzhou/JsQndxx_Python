@@ -8,7 +8,7 @@
 from Qndxx import Qndxx
 
 if __name__ == '__main__':
-    laravel_session = "8rAucTd84mpMLxilmCjeWO08rbtC7opDnrwosdaa"
+    laravel_session = "qGX9yOVupa1OaTpiNmq1US6JgtYMZIvc9H2SzO0a"
     qndxx = Qndxx(laravel_session)
     qndxx.login()
     qndxx.confirm()
