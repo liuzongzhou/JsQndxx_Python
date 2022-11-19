@@ -6,10 +6,13 @@
 @time:2022/09/17
 """
 from Qndxx import Qndxx
-import sys
+import argparse
 
 if __name__ == '__main__':
-    laravel_session = sys.argv
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--aa', type=str, default = None)
+    args = parser.parse_args()
+    laravel_session = args.aa
     qndxx = Qndxx(laravel_session)
     qndxx.login()
     qndxx.confirm()
