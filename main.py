@@ -6,9 +6,10 @@
 @time:2022/09/17
 """
 from Qndxx import Qndxx
+import sys
 
 if __name__ == '__main__':
-    laravel_session = os.environ["COOKIE1"]
+    laravel_session = sys.argv
     qndxx = Qndxx(laravel_session)
     qndxx.login()
     qndxx.confirm()
