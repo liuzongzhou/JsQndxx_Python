@@ -38,7 +38,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: hello
       run: |
-        python3 ./main.py --aa = COOKIE1
+        python3 ./main.py
 env: 
   #设置secrets的环境变量
     COOKIE1: ${{ secrets.COOKIE1 }}
