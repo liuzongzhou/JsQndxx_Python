@@ -1,0 +1,42 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+  # 定时任务，在每天的24点 18点推送签到信息到邮箱
+    - cron:  2 * * * * 
+      # 定时器更改时间
+      # https://tool.lu/crontab/
+      # https://datetime360.com/cn/utc-cst-china-time/ #UTC时间 国际协调时间+8=北京时间
+      # https://docs.github.com/cn/actions/using-workflows/workflow-syntax-for-github-actions#onschedule 官方参考
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: checkin
+      run: |
+        python3 ./main.py
+env: 
+  #设置secrets的环境变量
+    COOKIE1: ${{ secrets.COOKIE1 }}
